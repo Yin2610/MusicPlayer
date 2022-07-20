@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">Week5b</string>
+    <string name="title_activity_loading">activity_loading</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+    <string-array name="app_themes">
+        <item>Aesthetic blue/purple</item>
+        <item>Light theme</item>
+        <item>Dark theme</item>
+    </string-array>
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="choose_theme">Choose theme</string>
+    <string name="music_volume">Music volume</string>
+    <string name="improve_your_recommendations">Improve your recommendations</string>
+    <string name="update_recommendation_system_based_on_your_likes">Update recommendation system based on your likes</string>
+    <string name="home">Home</string>
+    <string name="playlists">Playlists</string>
+    <string name="explore">Explore</string>
+    <string name="settings">Settings</string>
+<!--    <string-array name="playlistsMenus">-->
+<!--        <item>Create new playlist</item>-->
+<!--        <item>Downloaded</item>-->
+<!--        <item>Favourites</item>-->
+<!--    </string-array>-->
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="mymusic">MyMusic</string>
+</resources>
