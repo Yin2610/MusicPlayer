@@ -7,8 +7,9 @@ public class Song {
     private String fileLink;
     private double songLength;
     private int drawable;
+    private String genre;
 
-    public Song(String id, String title, String artist, String fileLink, double songLength, int drawable)
+    public Song(String id, String title, String artist, String fileLink, double songLength, int drawable, String genre)
     {
         this.id = id;
         this.title = title;
@@ -16,6 +17,7 @@ public class Song {
         this.fileLink = fileLink;
         this.songLength = songLength;
         this.drawable = drawable;
+        this.genre = genre;
     }
 
     public String getId() {
@@ -40,5 +42,9 @@ public class Song {
 
     public int getDrawable() {
         return drawable;
+    }
+
+    public String getGenre() {
+        return genre;
     }
 }
