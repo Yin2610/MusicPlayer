@@ -6,28 +6,38 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:icon="@mipmap/mymusic_logo_foreground"
+        android:label="MyMusic"
+        android:roundIcon="@mipmap/mymusic_logo_foreground"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Week5b.NoActionBar">
+        android:theme="@style/Theme.Week5b">
         <activity
-            android:name=".SettingsActivity"
+            android:name=".CreatedPlayListActivity"
             android:exported="false" />
         <activity
             android:name=".Loading"
-            android:exported="false" />
-        <activity
-            android:name=".PlaySongActivity"
-            android:exported="false" />
-        <activity
-            android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".PlaySongActivity"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="android.intent.action.SEND" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="text/plain" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:exported="false"
+            android:windowSoftInputMode="adjustPan">
         </activity>
     </application>
 

@@ -7,199 +7,383 @@
     tools:context=".HomeFragment">
 
     <!-- TODO: Update blank fragment layout -->
-<!--    <TextView-->
-<!--        android:id="@+id/txtTitle"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginStart="116dp"-->
-<!--        android:layout_marginTop="492dp"-->
-<!--        android:text="The Way You Look Tonight"-->
-<!--        android:textSize="18sp"-->
-<!--        app:layout_constraintStart_toEndOf="@+id/S1001"-->
-<!--        app:layout_constraintTop_toTopOf="parent" />-->
 
-<!--    <TextView-->
-<!--        android:id="@+id/txtTitle2"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginStart="50dp"-->
-<!--        android:layout_marginTop="124dp"-->
-<!--        android:text="Billie Jean"-->
-<!--        android:textSize="18sp"-->
-<!--        app:layout_constraintStart_toEndOf="@+id/S1002"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/txtArtist1" />-->
 
-<!--    <TextView-->
-<!--        android:id="@+id/txtArtist2"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginStart="48dp"-->
-<!--        android:layout_marginTop="24dp"-->
-<!--        android:text="Michael Buble"-->
-<!--        app:layout_constraintStart_toEndOf="@+id/S1001"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/txtTitle1" />-->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-<!--    <TextView-->
-<!--        android:id="@+id/txtArtist3"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginStart="48dp"-->
-<!--        android:layout_marginTop="37dp"-->
-<!--        android:text="Michael Jackson"-->
-<!--        app:layout_constraintStart_toEndOf="@+id/S1002"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/txtTitle2" />-->
+        <ScrollView
+            android:id="@+id/scrollView2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-<!--    <ImageView-->
-<!--        android:id="@+id/s3"-->
-<!--        android:layout_width="80dp"-->
-<!--        android:layout_height="80dp"-->
-<!--        android:layout_marginStart="40dp"-->
-<!--        android:layout_marginTop="99dp"-->
-<!--        android:onClick="handleSelection"-->
-<!--        android:scaleType="centerCrop"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/S1002"-->
-<!--        app:srcCompat="@drawable/photograph" />-->
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/recentLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
 
-<!--    <TextView-->
-<!--        android:id="@+id/txtTitle3"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginStart="50dp"-->
-<!--        android:layout_marginTop="98dp"-->
-<!--        android:text="One"-->
-<!--        android:textSize="18sp"-->
-<!--        app:layout_constraintStart_toEndOf="@+id/S1003"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/txtArtist2" />-->
+                <ImageButton
+                    android:id="@+id/btnSearch"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="339dp"
+                    android:layout_marginTop="32dp"
+                    android:background="#D0F3E6E6"
+                    android:foreground="#002D2D2D"
+                    android:onClick="searchSong"
+                    android:scaleType="fitCenter"
+                    android:src="?android:attr/actionModeWebSearchDrawable"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-<!--    <TextView-->
-<!--        android:id="@+id/textView2"-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:layout_marginStart="56dp"-->
-<!--        android:layout_marginTop="37dp"-->
-<!--        android:text="Ed Sheeran"-->
-<!--        app:layout_constraintStart_toEndOf="@+id/S1003"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/txtTitle3" />-->
+                <TextView
+                    android:id="@+id/txtPopularNow"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="108dp"
+                    android:layout_weight="1"
+                    android:contentDescription="Popular now"
+                    android:text="Popular now"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-<!--    <HorizontalScrollView-->
-<!--        android:id="@+id/horizontalScrollView"-->
-<!--        android:layout_width="409dp"-->
-<!--        android:layout_height="176dp"-->
-<!--        android:layout_marginStart="1dp"-->
-<!--        android:layout_marginTop="144dp"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent">-->
+                <HorizontalScrollView
+                    android:id="@+id/horizontalScrollView1"
+                    android:layout_width="409dp"
+                    android:layout_height="176dp"
+                    android:layout_marginStart="1dp"
+                    android:layout_marginTop="144dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
 
-<!--        <LinearLayout-->
-<!--            android:id="@+id/recentLayout"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="match_parent"-->
-<!--            android:orientation="horizontal">-->
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent">
 
-<!--            <ImageButton-->
-<!--                android:id="@+id/s1"-->
-<!--                android:layout_width="120dp"-->
-<!--                android:layout_height="120dp"-->
-<!--                android:clickable="false"-->
-<!--                android:contentDescription="Billie Jean Song by Michael Jackson"-->
-<!--                android:onClick="handleSelection"-->
-<!--                android:paddingLeft="50sp"-->
-<!--                android:paddingRight="50sp"-->
-<!--                android:scaleType="centerCrop"-->
-<!--                app:layout_constraintStart_toStartOf="parent"-->
-<!--                app:layout_constraintTop_toTopOf="parent"-->
-<!--                app:srcCompat="@drawable/billie_jean" />-->
+                        <ImageButton
+                            android:id="@+id/S1001"
+                            android:layout_width="120dp"
+                            android:layout_height="120dp"
+                            android:layout_marginStart="15dp"
+                            android:contentDescription="The Way You Look Tonight By Michael Buble"
+                            android:onClick="handleSelection"
+                            android:paddingLeft="50sp"
+                            android:paddingRight="50sp"
+                            android:scaleType="centerCrop"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@drawable/michael_buble_collection" />
 
-<!--            <ImageButton-->
-<!--                android:id="@+id/s2"-->
-<!--                android:layout_width="120dp"-->
-<!--                android:layout_height="120dp"-->
-<!--                android:onClick="handleSelection"-->
-<!--                android:paddingLeft="50sp"-->
-<!--                android:paddingRight="50sp"-->
-<!--                android:scaleType="centerCrop"-->
-<!--                app:layout_constraintStart_toStartOf="parent"-->
-<!--                app:layout_constraintTop_toTopOf="parent"-->
-<!--                app:srcCompat="@drawable/michael_buble_collection" />-->
+                        <TextView
+                            android:id="@+id/txtSongTitle1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginTop="5dp"
+                            android:text="Santa Baby"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/S1001" />
 
-<!--            <ImageView-->
-<!--                android:id="@+id/imageView"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:clickable="true"-->
-<!--                android:focusable="true"-->
-<!--                android:onClick="handleSelection"-->
-<!--                android:paddingLeft="50sp"-->
-<!--                android:paddingRight="50sp"-->
-<!--                app:srcCompat="@drawable/song_perfect" />-->
+                        <TextView
+                            android:id="@+id/txtArtist1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginTop="5dp"
+                            android:text="Michael Buble"
+                            android:textSize="12sp"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/txtSongTitle1" />
 
-<!--            <ImageView-->
-<!--                android:id="@+id/imageView2"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:paddingLeft="50sp"-->
-<!--                android:paddingRight="50sp"-->
-<!--                app:srcCompat="@drawable/song_memories" />-->
+                        <ImageButton
+                            android:id="@+id/S1002"
+                            android:layout_width="120dp"
+                            android:layout_height="120dp"
+                            android:layout_marginStart="70dp"
+                            android:contentDescription="Billie Jean by Michael Jackson"
+                            android:onClick="handleSelection"
+                            android:paddingLeft="50sp"
+                            android:paddingRight="50sp"
+                            android:scaleType="centerCrop"
+                            app:layout_constraintStart_toEndOf="@+id/S1001"
+                            app:layout_constraintTop_toTopOf="@+id/S1001"
+                            app:srcCompat="@drawable/billie_jean" />
 
-<!--            <ImageView-->
-<!--                android:id="@+id/imageView3"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:paddingLeft="50sp"-->
-<!--                android:paddingRight="50sp"-->
-<!--                app:srcCompat="@drawable/song_heather"-->
-<!--                tools:layout_editor_absoluteX="357dp"-->
-<!--                tools:layout_editor_absoluteY="16dp" />-->
+                        <TextView
+                            android:id="@+id/txtSongTitle2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="120dp"
+                            android:layout_marginTop="4dp"
+                            android:text="Billie Jean"
+                            app:layout_constraintStart_toEndOf="@+id/txtSongTitle1"
+                            app:layout_constraintTop_toBottomOf="@+id/S1002" />
 
-<!--            <ImageView-->
-<!--                android:id="@+id/imageView4"-->
-<!--                android:layout_width="wrap_content"-->
-<!--                android:layout_height="wrap_content"-->
-<!--                android:paddingLeft="50sp"-->
-<!--                android:paddingRight="50sp"-->
-<!--                app:srcCompat="@drawable/song_treat_you_better"-->
-<!--                tools:layout_editor_absoluteX="296dp"-->
-<!--                tools:layout_editor_absoluteY="231dp" />-->
-<!--        </LinearLayout>-->
-<!--    </HorizontalScrollView>-->
+                        <TextView
+                            android:id="@+id/txtArtist2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="112dp"
+                            android:layout_marginTop="4dp"
+                            android:text="Michael Jackson"
+                            android:textSize="12sp"
+                            app:layout_constraintStart_toEndOf="@+id/txtArtist1"
+                            app:layout_constraintTop_toBottomOf="@+id/txtSongTitle2" />
 
-<!--    <SearchView-->
-<!--        android:id="@+id/searchView"-->
-<!--        android:layout_width="226dp"-->
-<!--        android:layout_height="49dp"-->
-<!--        android:layout_marginStart="184dp"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent">-->
+                        <ImageButton
+                            android:id="@+id/S1003"
+                            android:layout_width="120dp"
+                            android:layout_height="120dp"
+                            android:layout_marginStart="70dp"
+                            android:contentDescription="One"
+                            android:onClick="handleSelection"
+                            android:paddingLeft="50sp"
+                            android:paddingRight="50sp"
+                            android:scaleType="centerCrop"
+                            app:layout_constraintStart_toEndOf="@+id/S1002"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@drawable/photograph" />
 
-<!--    </SearchView>-->
+                        <TextView
+                            android:id="@+id/txtSongTitle3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="126dp"
+                            android:layout_marginTop="5dp"
+                            android:text="One"
+                            app:layout_constraintStart_toEndOf="@+id/txtSongTitle2"
+                            app:layout_constraintTop_toBottomOf="@+id/S1003" />
 
-<!--    <TextView-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent"-->
-<!--        android:text="@string/mymusic"-->
-<!--        android:layout_marginTop="10dp"-->
-<!--        android:layout_marginLeft="30dp"/>-->
+                        <TextView
+                            android:id="@+id/txtArtist3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="99dp"
+                            android:layout_marginTop="5dp"
+                            android:text="Ed Sheeran"
+                            android:textSize="12sp"
+                            app:layout_constraintStart_toEndOf="@+id/txtArtist2"
+                            app:layout_constraintTop_toBottomOf="@+id/txtSongTitle2" />
 
-<!--    <SearchView-->
-<!--        android:layout_width="412dp"-->
-<!--        android:layout_height="104dp"-->
-<!--        android:layout_marginRight="30dp" />-->
+                        <ImageButton
+                            android:id="@+id/S1004"
+                            android:layout_width="120dp"
+                            android:layout_height="120dp"
+                            android:layout_marginStart="70dp"
+                            android:contentDescription="Need to Know"
+                            android:onClick="handleSelection"
+                            android:paddingLeft="50sp"
+                            android:paddingRight="50sp"
+                            android:scaleType="center"
+                            app:layout_constraintStart_toEndOf="@+id/S1003"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@drawable/need_to_know_doja_cat" />
 
-<!--    <HorizontalScrollView-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent">-->
+                        <TextView
+                            android:id="@+id/txtSongTitle4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="165dp"
+                            android:layout_marginTop="5dp"
+                            android:text="Need to Know"
+                            app:layout_constraintStart_toEndOf="@+id/txtSongTitle3"
+                            app:layout_constraintTop_toBottomOf="@+id/S1004" />
 
-<!--        <LinearLayout-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="match_parent"-->
-<!--            android:orientation="vertical">-->
+                        <TextView
+                            android:id="@+id/txtArtist4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="127dp"
+                            android:layout_marginTop="5dp"
+                            android:text="Doja Cat"
+                            android:textSize="12sp"
+                            app:layout_constraintStart_toEndOf="@+id/txtArtist3"
+                            app:layout_constraintTop_toBottomOf="@+id/txtSongTitle4" />
 
-<!--            <ImageView-->
-<!--                android:id="@+id/imageView"-->
-<!--                android:layout_width="201dp"-->
-<!--                android:layout_height="166dp"-->
-<!--                app:srcCompat="@drawable/billie_jean" />-->
-<!--        </LinearLayout>-->
-<!--    </HorizontalScrollView>-->
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </HorizontalScrollView>
+
+                <TextView
+                    android:id="@+id/txtRecommendations"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="360dp"
+                    android:layout_weight="1"
+                    android:contentDescription="Recommendations"
+                    android:text="Recommendations"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginStart="25dp"
+                    android:layout_marginTop="32dp"
+                    android:src="@drawable/mymusic_logo"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/textView2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="11dp"
+                    android:layout_marginTop="43dp"
+                    android:text="@string/mymusic"
+                    android:textSize="18sp"
+                    app:layout_constraintStart_toEndOf="@+id/imageView"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <HorizontalScrollView
+                    android:id="@+id/horizontalScrollView2"
+                    android:layout_width="409dp"
+                    android:layout_height="176dp"
+                    android:layout_marginStart="1dp"
+                    android:layout_marginTop="400dp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <androidx.constraintlayout.widget.ConstraintLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent">
+
+                        <ImageButton
+                            android:id="@+id/S1005"
+                            android:layout_width="120dp"
+                            android:layout_height="120dp"
+                            android:layout_marginStart="15dp"
+                            android:onClick="handleSelection"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/chunky_bruno_mars"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <ImageButton
+                            android:id="@+id/S1006"
+                            android:layout_width="120dp"
+                            android:layout_height="120dp"
+                            android:layout_marginStart="70dp"
+                            android:onClick="handleSelection"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/leave_the_door_open"
+                            app:layout_constraintStart_toEndOf="@+id/S1005"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <ImageButton
+                            android:id="@+id/S1007"
+                            android:layout_width="120dp"
+                            android:layout_height="120dp"
+                            android:layout_marginStart="70dp"
+                            android:onClick="handleSelection"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/problem_with_you"
+                            app:layout_constraintStart_toEndOf="@+id/S1006"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <ImageButton
+                            android:id="@+id/S1008"
+                            android:layout_width="120dp"
+                            android:layout_height="120dp"
+                            android:layout_marginStart="70dp"
+                            android:onClick="handleSelection"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/i_am_that_girl"
+                            app:layout_constraintStart_toEndOf="@+id/S1007"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/txtSongTitle5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginTop="5dp"
+                            android:text="Chunky"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/S1005" />
+
+                        <TextView
+                            android:id="@+id/txtArtist5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="15dp"
+                            android:layout_marginTop="5dp"
+                            android:text="Bruno Mars"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toBottomOf="@+id/txtSongTitle5" />
+
+                        <TextView
+                            android:id="@+id/txtArtist6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="115dp"
+                            android:text="Bruno Mars"
+                            app:layout_constraintStart_toEndOf="@+id/txtArtist5"
+                            app:layout_constraintTop_toBottomOf="@+id/txtSongTitle6"/>
+
+                        <TextView
+                            android:id="@+id/txtSongTitle6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="143dp"
+                            android:layout_marginTop="5dp"
+                            android:text="Leave The Door Open"
+                            app:layout_constraintStart_toEndOf="@+id/txtSongTitle5"
+                            app:layout_constraintTop_toBottomOf="@+id/S1006" />
+
+                        <TextView
+                            android:id="@+id/txtArtist7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="125dp"
+                            android:layout_marginTop="5dp"
+                            android:text="Chris Brown"
+                            app:layout_constraintStart_toEndOf="@+id/txtArtist6"
+                            app:layout_constraintTop_toBottomOf="@+id/txtSongTitle7" />
+
+                        <TextView
+                            android:id="@+id/txtSongTitle7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="60dp"
+                            android:layout_marginTop="5dp"
+                            android:text="Sleep At Night"
+                            app:layout_constraintStart_toEndOf="@+id/txtSongTitle6"
+                            app:layout_constraintTop_toBottomOf="@+id/S1007" />
+
+                        <TextView
+                            android:id="@+id/txtArtist8"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="115dp"
+                            android:layout_marginTop="5dp"
+                            android:text="Beyonce"
+                            app:layout_constraintStart_toEndOf="@+id/txtArtist7"
+                            app:layout_constraintTop_toBottomOf="@+id/txtSongTitle6" />
+
+                        <TextView
+                            android:id="@+id/txtSongTitle8"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="105dp"
+                            android:layout_marginTop="5dp"
+                            android:text="I'm That Girl"
+                            app:layout_constraintStart_toEndOf="@+id/txtSongTitle7"
+                            app:layout_constraintTop_toBottomOf="@+id/S1008" />
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>
+                </HorizontalScrollView>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 </FrameLayout>
