@@ -22,7 +22,10 @@ import android.widget.SearchView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.squareup.picasso.Picasso;
+
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class SearchFragment extends Fragment {
@@ -42,9 +45,9 @@ public class SearchFragment extends Fragment {
         // Inflate the layout for this fragment
         View root = inflater.inflate(R.layout.fragment_search, container, false);
         searchGridView = root.findViewById(R.id.searchGridView);
-        songList = songCollection.songs;
         TextView txtSearchResult = root.findViewById(R.id.txtSearchResult);
 
+        songList = Arrays.asList(songCollection.songs);
         searchSongAdapter = new SearchSongAdapter(songList);
         Resources r = getResources();
         int width = Math.round(TypedValue.applyDimension(TypedValue.COMPLEX_UNIT_DIP, 410, r.getDisplayMetrics()));
@@ -111,7 +114,8 @@ public class SearchFragment extends Fragment {
             TextView txtSong = songItemView.findViewById(R.id.txtSong);
             TextView txtArtistName = songItemView.findViewById(R.id.txtArtistName);
 
-            imageView.setImageResource(filteredSongList.get(index).getDrawable());
+            Song song = filteredSongList.get(index);
+            Picasso.with(getContext()).load(song.getDrawable()).into(imageView);
             imageView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {

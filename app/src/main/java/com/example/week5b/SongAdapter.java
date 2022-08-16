@@ -56,7 +56,7 @@ public class SongAdapter extends RecyclerView.Adapter<MyView>
         txtArtist.setText(song.getArtist());
         TextView txtSong = holder.txtPlaylistSong;
         txtSong.setText(song.getTitle());
-        int imageId = AppUtil.getImageIdFromDrawable(context, Integer.toString(song.getDrawable()));
+        int imageId = AppUtil.getImageIdFromDrawable(context, song.getDrawable());
         holder.imgPlaylistCover.setImageResource(imageId);
         holder.btnPlaySong.setTag(song.getId());
         holder.btnRemoveSong.setTag(position);

@@ -20,6 +20,7 @@ import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import com.squareup.picasso.Picasso;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -33,14 +34,14 @@ public class PlaySongActivity extends AppCompatActivity {
     private String title = "";
     private String artist = "";
     private String fileLink = "";
-    private int drawable;
+    private String drawable;
     private int currentIndex = -1;
 
     private MediaPlayer player = new MediaPlayer();
     private ImageButton btnPlayPause = null;
     private SongCollection songCollection = new SongCollection();
     private SongCollection originalSongCollection = new SongCollection();
-    List<Song> shuffleList = songCollection.songs;
+    List<Song> shuffleList = Arrays.asList(songCollection.songs);
 
     static ArrayList<Song> playlist = new ArrayList<>();
     static SharedPreferences sharedPreferences;
@@ -125,7 +126,7 @@ public class PlaySongActivity extends AppCompatActivity {
         TextView txtArtist = findViewById(R.id.txtArtist);
         txtArtist.setText(artist);
         ImageView iCoverArt = findViewById(R.id.imgCoverArt);
-        iCoverArt.setImageResource(drawable);
+        Picasso.with(this).load(drawable).into(iCoverArt);
     }
 
     public Song retrieveSongObject(View view)
@@ -369,7 +370,7 @@ public class PlaySongActivity extends AppCompatActivity {
         {
             btnShuffle.setImageResource(R.drawable.shuffle_on);
             Collections.shuffle(shuffleList);
-            songCollection.songs = new ArrayList<>(shuffleList);
+            shuffleList.toArray(songCollection.songs);
         }
         shuffle = !shuffle; /* for inversing the boolean state of shuffle when the repeat button is clicked
                             true -> false, false -> true */

@@ -76,8 +76,7 @@
                             android:paddingRight="50sp"
                             android:scaleType="centerCrop"
                             app:layout_constraintStart_toStartOf="parent"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:srcCompat="@drawable/michael_buble_collection" />
+                            app:layout_constraintTop_toTopOf="parent" />
 
                         <TextView
                             android:id="@+id/txtSongTitle1"
@@ -111,8 +110,7 @@
                             android:paddingRight="50sp"
                             android:scaleType="centerCrop"
                             app:layout_constraintStart_toEndOf="@+id/S1001"
-                            app:layout_constraintTop_toTopOf="@+id/S1001"
-                            app:srcCompat="@drawable/billie_jean" />
+                            app:layout_constraintTop_toTopOf="@+id/S1001" />
 
                         <TextView
                             android:id="@+id/txtSongTitle2"
@@ -146,8 +144,7 @@
                             android:paddingRight="50sp"
                             android:scaleType="centerCrop"
                             app:layout_constraintStart_toEndOf="@+id/S1002"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:srcCompat="@drawable/photograph" />
+                            app:layout_constraintTop_toTopOf="parent" />
 
                         <TextView
                             android:id="@+id/txtSongTitle3"
@@ -179,10 +176,9 @@
                             android:onClick="handleSelection"
                             android:paddingLeft="50sp"
                             android:paddingRight="50sp"
-                            android:scaleType="center"
+                            android:scaleType="centerCrop"
                             app:layout_constraintStart_toEndOf="@+id/S1003"
-                            app:layout_constraintTop_toTopOf="parent"
-                            app:srcCompat="@drawable/need_to_know_doja_cat" />
+                            app:layout_constraintTop_toTopOf="parent" />
 
                         <TextView
                             android:id="@+id/txtSongTitle4"
@@ -262,7 +258,6 @@
                             android:layout_marginStart="15dp"
                             android:onClick="handleSelection"
                             android:scaleType="centerCrop"
-                            android:src="@drawable/chunky_bruno_mars"
                             app:layout_constraintStart_toStartOf="parent"
                             app:layout_constraintTop_toTopOf="parent" />
 
@@ -273,7 +268,6 @@
                             android:layout_marginStart="70dp"
                             android:onClick="handleSelection"
                             android:scaleType="centerCrop"
-                            android:src="@drawable/leave_the_door_open"
                             app:layout_constraintStart_toEndOf="@+id/S1005"
                             app:layout_constraintTop_toTopOf="parent" />
 
@@ -284,7 +278,6 @@
                             android:layout_marginStart="70dp"
                             android:onClick="handleSelection"
                             android:scaleType="centerCrop"
-                            android:src="@drawable/problem_with_you"
                             app:layout_constraintStart_toEndOf="@+id/S1006"
                             app:layout_constraintTop_toTopOf="parent" />
 
@@ -295,7 +288,6 @@
                             android:layout_marginStart="70dp"
                             android:onClick="handleSelection"
                             android:scaleType="centerCrop"
-                            android:src="@drawable/i_am_that_girl"
                             app:layout_constraintStart_toEndOf="@+id/S1007"
                             app:layout_constraintTop_toTopOf="parent" />
 

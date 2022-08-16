@@ -10,7 +10,10 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.Toast;
+
+import com.squareup.picasso.Picasso;
 
 public class HomeFragment extends Fragment {
 
@@ -34,6 +37,15 @@ public class HomeFragment extends Fragment {
                              Bundle savedInstanceState) {
         //Inflate the layout for this fragment
         ViewGroup root = (ViewGroup) inflater.inflate(R.layout.fragment_home, container, false);
+
+        for (int i = 0; i < songCollection.songs.length; i++)
+        {
+            String imageId = "S100";
+            imageId = imageId + (i+1);
+            ImageView imgView = root.findViewById(getResources().getIdentifier(imageId, "id", getContext().getPackageName()));
+            Picasso.with(getContext()).load(songCollection.songs[i].getDrawable()).into(imgView);
+        }
+
         ConstraintLayout recentLayout = root.findViewById(R.id.recentLayout);
 
         recentLayout.setOnClickListener(new View.OnClickListener(){
